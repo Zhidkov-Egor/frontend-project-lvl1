@@ -3,3 +3,5 @@
 
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/15725dcea6a475974ac6/maintainability)](https://codeclimate.com/github/Zhidkov-Egor/frontend-project-lvl1/maintainability)
+
+![example workflow](https://github.com/Zhidkov-Egot/frontend-project-lvl1/actions/workflows/eslint/badge.svg)
