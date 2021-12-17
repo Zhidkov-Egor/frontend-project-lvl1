@@ -2,6 +2,4 @@
 [![Actions Status](https://github.com/Zhidkov-Egor/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Zhidkov-Egor/frontend-project-lvl1/actions)
 
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/15725dcea6a475974ac6/maintainability)](https://codeclimate.com/github/Zhidkov-Egor/frontend-project-lvl1/maintainability)
