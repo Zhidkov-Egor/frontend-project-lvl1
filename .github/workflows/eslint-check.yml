@@ -1,0 +1,13 @@
+name: eslint
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.5.0
+      - name: 'setup node'
+        with:
+          node-version: '13.x'
+      - name: 'eslint'
+        run: npx eslint .
