@@ -2,11 +2,9 @@ import readlineSync from 'readline-sync';
 import { getRandom, comparison, happyEnd } from '../index.js';
 
 const largestDivisor = (numOne, numTwo) => {
-  let num;
+  let num = numOne;
   if (numOne > numTwo) {
     num = numTwo;
-  } else {
-    num = numOne;
   }
   let result = 1;
   for (let i = 2; i <= num; i += 1) {
