@@ -7,3 +7,5 @@
 [![eslint-check](https://github.com/Zhidkov-Egor/frontend-project-lvl1/actions/workflows/eslint-check.yml/badge.svg)](https://github.com/Zhidkov-Egor/frontend-project-lvl1/actions/workflows/eslint-check.yml)
 
 [![asciicast](https://asciinema.org/a/TmUoxfnXhPouTAA4zldDf2GEa.svg)](https://asciinema.org/a/TmUoxfnXhPouTAA4zldDf2GEa)
+
+[![asciicast](https://asciinema.org/a/RZ0kZwUoShhZzIOqbO7vSmBFK.svg)](https://asciinema.org/a/RZ0kZwUoShhZzIOqbO7vSmBFK)
