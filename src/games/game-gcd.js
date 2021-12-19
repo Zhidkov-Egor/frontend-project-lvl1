@@ -19,8 +19,8 @@ const largestDivisor = (numOne, numTwo) => {
 const gameGcd = (name, specification, rounds = 3) => {
   console.log(`${specification}`);
   for (let i = 0; i < rounds; i += 1) {
-    const numberOne = getRandom(0, 100);
-    const numberTwo = getRandom(0, 100);
+    const numberOne = getRandom(1, 100);
+    const numberTwo = getRandom(1, 100);
     console.log(`Question: ${numberOne} ${numberTwo}`);
 
     let answer = String(readlineSync.question('Your answer: '));
