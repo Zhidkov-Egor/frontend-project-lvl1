@@ -1,14 +1,3 @@
-import readlineSync from 'readline-sync';
-
-export const name = () => {
-  let enteredName = String(readlineSync.question('May I have your name? '));
-  if (enteredName.trim() === '') {
-    enteredName = 'Unknown';
-  }
-  console.log(`Hello, ${enteredName}!`);
-  return enteredName;
-};
-
 export const comparison = (result, answer, enteredName) => {
   if (result !== answer) {
     console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.`);

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { name, welcome } from '../src/index.js';
+import { welcome } from '../src/index.js';
+import name from '../src/cli.js';
 import gameEven from '../src/games/game-even.js';
 
 welcome();
