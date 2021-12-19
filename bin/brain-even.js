@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-import helloName from '../src/cli.js';
-import evenNumber from '../src/evenNumber.js';
+import { name, welcome } from '../src/index.js';
+import gameEven from '../src/games/game-even.js';
 
-console.log('Welcome to the Brain Games!');
-
-const name = helloName();
-
-evenNumber(name);
+welcome();
+const enteredName = name();
+const specification = 'Answer "yes" if the number is even, otherwise answer "no".';
+gameEven(enteredName, specification);
