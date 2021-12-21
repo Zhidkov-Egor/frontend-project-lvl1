@@ -1,38 +1,35 @@
-import readlineSync from 'readline-sync';
-import { getRandom, comparison, happyEnd } from '../index.js';
+import { isVerifiesUserResponse, getRandom } from '../lib.js';
 
-const gameCalc = (name, specification, rounds = 3) => {
-  console.log(`${specification}`);
-  for (let i = 0; i < rounds; i += 1) {
-    const numberOne = getRandom(0, 100);
-    const numberTwo = getRandom(0, 100);
-    const operation = ['+', '-', '*'];
-    const randomOperation = operation[getRandom(0, operation.length)];
-    console.log(`Question: ${numberOne} ${randomOperation} ${numberTwo}`);
+const rulesGame = 'What is the result of the expression?';
 
-    let answer = String(readlineSync.question('Your answer: '));
-    answer = Number(answer);
-    let result = 0;
-    switch (randomOperation) {
-      case '+':
-        result = numberOne + numberTwo;
-        break;
-      case '-':
-        result = numberOne - numberTwo;
-        break;
-      case '*':
-        result = numberOne * numberTwo;
-        break;
-      default:
-        break;
-    }
-    const comparisonResult = comparison(result, answer, name);
-    if (!comparisonResult) {
-      return;
-    }
+const getGameParameters = () => {
+  const numberOne = getRandom(0, 100);
+  const numberTwo = getRandom(0, 100);
+  const operation = ['+', '-', '*'];
+  const randomOperation = operation[getRandom(0, operation.length)];
+  const questionGame = `Question: ${numberOne} ${randomOperation} ${numberTwo}`;
+
+  let correctAnswer = 0;
+  switch (randomOperation) {
+    case '+':
+      correctAnswer = numberOne + numberTwo;
+      break;
+    case '-':
+      correctAnswer = numberOne - numberTwo;
+      break;
+    case '*':
+      correctAnswer = numberOne * numberTwo;
+      break;
+    default:
+      break;
   }
+  correctAnswer = String(correctAnswer);
 
-  happyEnd(name);
+  const gameParameters = [questionGame, correctAnswer];
+  return gameParameters;
 };
 
-export default gameCalc;
+const calculatorGame = () => {
+  isVerifiesUserResponse(rulesGame, getGameParameters);
+};
+export default calculatorGame;

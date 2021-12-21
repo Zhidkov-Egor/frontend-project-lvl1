@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandom, comparison, happyEnd } from '../index.js';
+import { getRandom, comparison, happyEnd } from '../lib.js';
 
 const gameEven = (name, specification, rounds = 3) => {
   console.log(`${specification}`);

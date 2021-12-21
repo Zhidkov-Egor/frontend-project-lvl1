@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandom, comparison, happyEnd } from '../index.js';
+import { getRandom, comparison, happyEnd } from '../lib.js';
 
 const checkPrime = (num) => {
   const moiety = num / 2;
