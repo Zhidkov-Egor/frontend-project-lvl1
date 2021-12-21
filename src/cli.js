@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const helloName = () => {
-  let name = String(readlineSync.question('May I have your name? '));
-  if (name.trim() === '') {
-    name = 'Unknown';
+const getUserName = () => {
+  let userName = String(readlineSync.question('May I have your name? '));
+  if (userName.trim() === '') {
+    userName = 'Unknown';
   }
-  console.log(`Hello, ${name}!`);
-  return name;
+  console.log(`Hello, ${userName}!`);
+  return userName;
 };
 
-export default helloName;
+export default getUserName;
