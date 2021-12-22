@@ -3,22 +3,22 @@ import { isVerifiesUserResponse, getRandom } from '../lib.js';
 const rulesGame = 'What is the result of the expression?';
 
 const getGameParameters = () => {
-  const numberOne = getRandom(0, 100);
-  const numberTwo = getRandom(0, 100);
+  const randomOperandOne = getRandom(0, 100);
+  const randomOperandTwo = getRandom(0, 100);
   const operation = ['+', '-', '*'];
   const randomOperation = operation[getRandom(0, operation.length)];
-  const questionGame = `Question: ${numberOne} ${randomOperation} ${numberTwo}`;
+  const questionGame = `Question: ${randomOperandOne} ${randomOperation} ${randomOperandTwo}`;
 
   let correctAnswer = 0;
   switch (randomOperation) {
     case '+':
-      correctAnswer = numberOne + numberTwo;
+      correctAnswer = randomOperandOne + randomOperandTwo;
       break;
     case '-':
-      correctAnswer = numberOne - numberTwo;
+      correctAnswer = randomOperandOne - randomOperandTwo;
       break;
     case '*':
-      correctAnswer = numberOne * numberTwo;
+      correctAnswer = randomOperandOne * randomOperandTwo;
       break;
     default:
       break;

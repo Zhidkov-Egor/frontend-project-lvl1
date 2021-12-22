@@ -1,39 +1,33 @@
-import readlineSync from 'readline-sync';
-import { getRandom, comparison, happyEnd } from '../lib.js';
+import { isVerifiesUserResponse, getRandom } from '../lib.js';
 
-const arrayOfNumbers = (first, interval, lengthArr) => {
-  const arrNumber = [];
-  let number = first;
-  for (let i = 0; i <= lengthArr; i += 1) {
-    arrNumber.push(number);
-    number += interval;
+const rulesGame = 'What number is missing in the progression?';
+
+const getArithmeticProgression = (firstNumber, interval, lengthProgression) => {
+  const arithmeticProgression = [];
+  let numberInArray = firstNumber;
+  for (let i = 0; i <= lengthProgression; i += 1) {
+    arithmeticProgression.push(numberInArray);
+    numberInArray += interval;
   }
-  return arrNumber;
+  return arithmeticProgression;
 };
 
-const gameProgression = (name, specification, rounds = 3) => {
-  console.log(`${specification}`);
-  for (let i = 0; i < rounds; i += 1) {
-    const firstNumber = getRandom(0, 15);
-    const interval = getRandom(0, 10);
-    const lengthArr = 10;
-    const secretNum = getRandom(0, 9);
-    const numberArr = arrayOfNumbers(firstNumber, interval, lengthArr);
-    const result = numberArr[secretNum];
-    numberArr[secretNum] = '..';
-    const numberArrString = numberArr.join(' ');
-    console.log(`Question: ${numberArrString}`);
+const getGameParameters = () => {
+  const firstNumber = getRandom(0, 15);
+  const interval = getRandom(0, 10);
+  const lengthProgression = 10;
+  const indexHiddenNumber = getRandom(0, 9);
+  const arithmeticProgression = getArithmeticProgression(firstNumber, interval, lengthProgression);
+  const correctAnswer = String(arithmeticProgression[indexHiddenNumber]);
+  arithmeticProgression[indexHiddenNumber] = '..';
+  const arithmeticProgressionString = arithmeticProgression.join(' ');
+  const questionGame = `Question: ${arithmeticProgressionString}`;
 
-    let answer = String(readlineSync.question('Your answer: '));
-    answer = Number(answer);
-
-    const comparisonResult = comparison(result, answer, name);
-    if (!comparisonResult) {
-      return;
-    }
-  }
-
-  happyEnd(name);
+  const gameParameters = [questionGame, correctAnswer];
+  return gameParameters;
 };
 
-export default gameProgression;
+const guessTheNumberInArithmeticProgression = () => {
+  isVerifiesUserResponse(rulesGame, getGameParameters);
+};
+export default guessTheNumberInArithmeticProgression;

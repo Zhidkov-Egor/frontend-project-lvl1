@@ -1,7 +1,8 @@
-import readlineSync from 'readline-sync';
-import { getRandom, comparison, happyEnd } from '../lib.js';
+import { isVerifiesUserResponse, getRandom } from '../lib.js';
 
-const checkPrime = (num) => {
+const rulesGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const answersEvenOrNot = (num) => {
   const moiety = num / 2;
   let result = 'yes';
   for (let i = 2; i <= moiety; i += 1) {
@@ -13,21 +14,15 @@ const checkPrime = (num) => {
   return result;
 };
 
-const gamePrime = (name, specification, rounds = 3) => {
-  console.log(`${specification}`);
-  for (let i = 0; i < rounds; i += 1) {
-    const number = getRandom(0, 500);
-    console.log(`Question: ${number}`);
-
-    const answer = String(readlineSync.question('Your answer: '));
-    const result = checkPrime(number);
-    const comparisonResult = comparison(result, answer, name);
-    if (!comparisonResult) {
-      return;
-    }
-  }
-
-  happyEnd(name);
+const getGameParameters = () => {
+  const randomNumber = getRandom(0, 500);
+  const questionGame = `Question: ${randomNumber}`;
+  const correctAnswer = answersEvenOrNot(randomNumber);
+  const gameParameters = [questionGame, correctAnswer];
+  return gameParameters;
 };
 
-export default gamePrime;
+const isItNumberEven = () => {
+  isVerifiesUserResponse(rulesGame, getGameParameters);
+};
+export default isItNumberEven;

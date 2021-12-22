@@ -1,27 +1,16 @@
-import readlineSync from 'readline-sync';
-import { getRandom, comparison, happyEnd } from '../lib.js';
+import { isVerifiesUserResponse, getRandom } from '../lib.js';
 
-const gameEven = (name, specification, rounds = 3) => {
-  console.log(`${specification}`);
-  for (let i = 0; i < rounds; i += 1) {
-    const number = getRandom(0, 100);
-    console.log(`Question: ${number}`);
+const rulesGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-    const answer = String(readlineSync.question('Your answer: '));
-
-    let result = '';
-    if (number % 2 === 0) {
-      result = 'yes';
-    } else {
-      result = 'no';
-    }
-    const comparisonResult = comparison(result, answer, name);
-    if (!comparisonResult) {
-      return;
-    }
-  }
-
-  happyEnd(name);
+const getGameParameters = () => {
+  const randomNumber = getRandom(0, 100);
+  const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
+  const questionGame = `Question: ${randomNumber}`;
+  const gameParameters = [questionGame, correctAnswer];
+  return gameParameters;
 };
 
-export default gameEven;
+const parityCheckGame = () => {
+  isVerifiesUserResponse(rulesGame, getGameParameters);
+};
+export default parityCheckGame;
