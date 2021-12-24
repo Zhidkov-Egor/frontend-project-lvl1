@@ -1,16 +1,16 @@
-import { isVerifiesUserResponse, getRandom } from '../lib.js';
+import getRandom from '../lib.js';
+import runGame from '../index.js';
 
-const rulesGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getGameParameters = () => {
   const randomNumber = getRandom(0, 100);
   const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
-  const questionGame = `Question: ${randomNumber}`;
-  const gameParameters = [questionGame, correctAnswer];
-  return gameParameters;
+  const questionGame = `${randomNumber}`;
+  return [questionGame, correctAnswer];
 };
 
-const parityCheckGame = () => {
-  isVerifiesUserResponse(rulesGame, getGameParameters);
+const runEvenNumberGame = () => {
+  runGame(gameQuestion, getGameParameters);
 };
-export default parityCheckGame;
+export default runEvenNumberGame;

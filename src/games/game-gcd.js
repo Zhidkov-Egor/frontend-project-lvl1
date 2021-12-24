@@ -1,6 +1,7 @@
-import { isVerifiesUserResponse, getRandom } from '../lib.js';
+import getRandom from '../lib.js';
+import runGame from '../index.js';
 
-const rulesGame = 'Find the greatest common divisor of given numbers.';
+const gameQuestion = 'Find the greatest common divisor of given numbers.';
 
 const getLargestDivisor = (first, second) => {
   const number = (first > second) ? second : first;
@@ -16,13 +17,12 @@ const getLargestDivisor = (first, second) => {
 const getGameParameters = () => {
   const randomNumberOne = getRandom(1, 100);
   const randomNumberTwo = getRandom(1, 100);
-  const questionGame = `Question: ${randomNumberOne} ${randomNumberTwo}`;
+  const questionGame = `${randomNumberOne} ${randomNumberTwo}`;
   const correctAnswer = getLargestDivisor(randomNumberOne, randomNumberTwo);
-  const gameParameters = [questionGame, correctAnswer];
-  return gameParameters;
+  return [questionGame, correctAnswer];
 };
 
-const isLargestCommonDenominator = () => {
-  isVerifiesUserResponse(rulesGame, getGameParameters);
+const runGreatestCommonDivisorGame = () => {
+  runGame(gameQuestion, getGameParameters);
 };
-export default isLargestCommonDenominator;
+export default runGreatestCommonDivisorGame;

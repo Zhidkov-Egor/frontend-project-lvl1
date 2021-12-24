@@ -1,6 +1,7 @@
-import { isVerifiesUserResponse, getRandom } from '../lib.js';
+import getRandom from '../lib.js';
+import runGame from '../index.js';
 
-const rulesGame = 'What number is missing in the progression?';
+const gameQuestion = 'What number is missing in the progression?';
 
 const getArithmeticProgression = (firstNumber, interval, lengthProgression) => {
   const arithmeticProgression = [];
@@ -21,13 +22,12 @@ const getGameParameters = () => {
   const correctAnswer = String(arithmeticProgression[indexHiddenNumber]);
   arithmeticProgression[indexHiddenNumber] = '..';
   const arithmeticProgressionString = arithmeticProgression.join(' ');
-  const questionGame = `Question: ${arithmeticProgressionString}`;
+  const questionGame = `${arithmeticProgressionString}`;
 
-  const gameParameters = [questionGame, correctAnswer];
-  return gameParameters;
+  return [questionGame, correctAnswer];
 };
 
-const guessTheNumberInArithmeticProgression = () => {
-  isVerifiesUserResponse(rulesGame, getGameParameters);
+const runGuessNumberGame = () => {
+  runGame(gameQuestion, getGameParameters);
 };
-export default guessTheNumberInArithmeticProgression;
+export default runGuessNumberGame;

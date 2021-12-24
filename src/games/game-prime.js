@@ -1,28 +1,26 @@
-import { isVerifiesUserResponse, getRandom } from '../lib.js';
+import getRandom from '../lib.js';
+import runGame from '../index.js';
 
-const rulesGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const answersEvenOrNot = (num) => {
+const isPrime = (num) => {
   const moiety = num / 2;
-  let result = 'yes';
   for (let i = 2; i <= moiety; i += 1) {
     if (num % i === 0) {
-      result = 'no';
-      return result;
+      return false;
     }
   }
-  return result;
+  return true;
 };
 
 const getGameParameters = () => {
   const randomNumber = getRandom(0, 500);
-  const questionGame = `Question: ${randomNumber}`;
-  const correctAnswer = answersEvenOrNot(randomNumber);
-  const gameParameters = [questionGame, correctAnswer];
-  return gameParameters;
+  const questionGame = `${randomNumber}`;
+  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+  return [questionGame, correctAnswer];
 };
 
-const isItNumberEven = () => {
-  isVerifiesUserResponse(rulesGame, getGameParameters);
+const runPrimeNumberGame = () => {
+  runGame(gameQuestion, getGameParameters);
 };
-export default isItNumberEven;
+export default runPrimeNumberGame;

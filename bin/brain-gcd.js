@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import isLargestCommonDenominator from '../src/games/game-gcd.js';
+import runGreatestCommonDivisorGame from '../src/games/game-gcd.js';
 
-isLargestCommonDenominator();
+runGreatestCommonDivisorGame();

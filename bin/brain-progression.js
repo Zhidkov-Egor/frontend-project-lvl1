@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import guessTheNumberInArithmeticProgression from '../src/games/game-progression.js';
+import runGuessNumberGame from '../src/games/game-progression.js';
 
-guessTheNumberInArithmeticProgression();
+runGuessNumberGame();

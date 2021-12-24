@@ -1,13 +1,14 @@
-import { isVerifiesUserResponse, getRandom } from '../lib.js';
+import getRandom from '../lib.js';
+import runGame from '../index.js';
 
-const rulesGame = 'What is the result of the expression?';
+const gameQuestion = 'What is the result of the expression?';
 
 const getGameParameters = () => {
   const randomOperandOne = getRandom(0, 100);
   const randomOperandTwo = getRandom(0, 100);
   const operation = ['+', '-', '*'];
   const randomOperation = operation[getRandom(0, operation.length)];
-  const questionGame = `Question: ${randomOperandOne} ${randomOperation} ${randomOperandTwo}`;
+  const questionGame = `${randomOperandOne} ${randomOperation} ${randomOperandTwo}`;
 
   let correctAnswer = 0;
   switch (randomOperation) {
@@ -24,12 +25,10 @@ const getGameParameters = () => {
       break;
   }
   correctAnswer = String(correctAnswer);
-
-  const gameParameters = [questionGame, correctAnswer];
-  return gameParameters;
+  return [questionGame, correctAnswer];
 };
 
-const calculatorGame = () => {
-  isVerifiesUserResponse(rulesGame, getGameParameters);
+const runCalcGame = () => {
+  runGame(gameQuestion, getGameParameters);
 };
-export default calculatorGame;
+export default runCalcGame;
