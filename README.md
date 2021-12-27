@@ -19,13 +19,13 @@
 
 Пример запуска игр можно посмотреть ниже:
 
-#brain-even
+## Brain-even
 [![asciicast](https://asciinema.org/a/TmUoxfnXhPouTAA4zldDf2GEa.svg)](https://asciinema.org/a/TmUoxfnXhPouTAA4zldDf2GEa)
-#brain-calc
+## Brain-calc
 [![asciicast](https://asciinema.org/a/RZ0kZwUoShhZzIOqbO7vSmBFK.svg)](https://asciinema.org/a/RZ0kZwUoShhZzIOqbO7vSmBFK)
-#brain-gcd
+## Brain-gcd
 [![asciicast](https://asciinema.org/a/FWtgZb7d3mPjgzATV1eVsFGFA.svg)](https://asciinema.org/a/FWtgZb7d3mPjgzATV1eVsFGFA)
-#brain-progression
+## Brain-progression
 [![asciicast](https://asciinema.org/a/AoRVncFlSYRg8D7zCNVV1QzrD.svg)](https://asciinema.org/a/AoRVncFlSYRg8D7zCNVV1QzrD)
-#brain-prime
+## Brain-prime
 [![asciicast](https://asciinema.org/a/fO6wbWNK6DdcgbKq8oes6fAvZ.svg)](https://asciinema.org/a/fO6wbWNK6DdcgbKq8oes6fAvZ)
