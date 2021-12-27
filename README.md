@@ -17,15 +17,15 @@
    5) make brain-progression
    6) make brain-prime
 
-Пример запуска игр можно посмотреть ниже:
+## Пример запуска игр можно посмотреть ниже:
 
-## Brain-even
+### Brain-even
 [![asciicast](https://asciinema.org/a/TmUoxfnXhPouTAA4zldDf2GEa.svg)](https://asciinema.org/a/TmUoxfnXhPouTAA4zldDf2GEa)
-## Brain-calc
+### Brain-calc
 [![asciicast](https://asciinema.org/a/RZ0kZwUoShhZzIOqbO7vSmBFK.svg)](https://asciinema.org/a/RZ0kZwUoShhZzIOqbO7vSmBFK)
-## Brain-gcd
+### Brain-gcd
 [![asciicast](https://asciinema.org/a/FWtgZb7d3mPjgzATV1eVsFGFA.svg)](https://asciinema.org/a/FWtgZb7d3mPjgzATV1eVsFGFA)
-## Brain-progression
+### Brain-progression
 [![asciicast](https://asciinema.org/a/AoRVncFlSYRg8D7zCNVV1QzrD.svg)](https://asciinema.org/a/AoRVncFlSYRg8D7zCNVV1QzrD)
-## Brain-prime
+### Brain-prime
 [![asciicast](https://asciinema.org/a/fO6wbWNK6DdcgbKq8oes6fAvZ.svg)](https://asciinema.org/a/fO6wbWNK6DdcgbKq8oes6fAvZ)
