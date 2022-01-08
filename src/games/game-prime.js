@@ -4,6 +4,7 @@ import runGame from '../index.js';
 const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
+  if (num < 2) return false;
   const moiety = num / 2;
   for (let i = 2; i <= moiety; i += 1) {
     if (num % i === 0) {
